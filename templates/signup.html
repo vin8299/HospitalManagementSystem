@@ -1,0 +1,64 @@
+{% extends 'outlayout.html '%}
+{% block title %}
+	{{ title }}
+{% endblock %}
+{% block carousel %}
+{% endblock %}
+{% block home %}
+{% endblock %}
+{% block loginout %}
+{% endblock %}
+{% block body %}
+<div class="container">
+	<form method="POST" class="doctor-form">{% csrf_token %}
+		<h1>Register details!!!</h1>
+			<table>
+				<tr>
+					<td><label>Username:</label></td>
+					<td><input type="text" name="{{ form.username.html_name }}"></td>
+				</tr>
+				<tr>
+					<td><label>Email:</label></td>
+					<td><input type="email" name="{{ form.email.html_name }}" class="email"></td>
+					<td>
+						{% if form.errors.email %}
+							{{ form.errors.email }}
+						{% endif %}
+					</td>
+				</tr>
+				<tr>
+					<td><label>Password:</label></td>
+					<td><input type="password" name="{{ form.password.html_name }}"></td>
+				</tr>
+				<tr>
+					<td><label>Confirm Password:</label></td>
+					<td><input type="password" name="{{ form.confirm_password.html_name }}"></td>
+					<td>
+						{% if form.errors.confirm_password %}
+							{{ form.errors.confirm_password }}
+						{% endif %}
+					</td>
+				</tr>				
+			</table>
+			<div class="d-reg">
+				<button type="submit" class="submit">Register</button>
+				<button type="Reset">Reset</button>
+			</div>
+			<div class="forgot">
+				<a href="{% url 'signin'%}">Already Account?</a>
+			</div>
+	</form>
+</div>
+{% block js %}
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".submit").click(fucntion(){
+			if $(".errorlist li").value!=null{
+				
+			}
+		})
+	})
+</script>
+{% endblock %}
+
+{% endblock %}

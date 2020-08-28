@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}
+ {{ title }}
+{% endblock %}
+{%block home %}
+{% endblock %}
+{% block body %}
+	<form method="POST">{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" name="" value="Get Appoint">
+	</form>
+{% endblock %}
